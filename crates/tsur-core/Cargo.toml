@@ -9,9 +9,9 @@ license = "MIT OR Apache-2.0"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-tsur-args = { path = "../tsur-args" }
-tsur-config = { path = "../tsur-config" }
-tsur-run = { path = "../tsur-run" }
+tsur-args = { path = "../tsur-args", version = "0.1.1" }
+tsur-config = { path = "../tsur-config", version = "0.1.1" }
+tsur-run = { path = "../tsur-run", version = "0.1.1" }
 
 [[bin]]
 path = "src/main.rs"
