@@ -1,5 +1,9 @@
-pub fn args() {
-    let args = App::new("tRust")
+//! # Tsur Args.
+//! For handling terminal arguments.
+use clap::{App, Arg};
+
+pub fn args() -> clap::ArgMatches<'static> {
+    App::new("tsur")
         .version("0.1.0")
         .author("109149 <109149qwe@gmail.com>")
         .about("Just Rusting...You know...O_O")
@@ -29,5 +33,5 @@ pub fn args() {
                 .takes_value(false)
                 .help("QWE"),
         )
-        .get_matches();
+        .get_matches()
 }
