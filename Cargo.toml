@@ -1,8 +1,24 @@
-[workspace]
-members = [
-  "crates/tsur-args",
-  "crates/tsur-ascii",
-  "crates/tsur-config",
-  "crates/tsur-core",
-  "crates/tsur-run",
-]
+[package]
+name = "tsur"
+version = "0.1.1"
+authors = ["109149 <109149qwe@gmail.com>"]
+description = "ASCII character counter."
+edition = "2018"
+license = "MIT OR Apache-2.0"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+clap = "2.0.0"
+
+[[bin]]
+path = "src/main.rs"
+name = "tsur"
+
+[lib]
+name = "tsur"
+path = "src/lib.rs"
+
+[[test]]
+path = "src/args/test.rs"
+name = "tsur-args-test"

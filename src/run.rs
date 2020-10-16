@@ -5,8 +5,8 @@ use std::collections::HashMap;
 use std::error::Error;
 use std::fs;
 
-use tsur_ascii::ASCII;
-use tsur_config::Config;
+use crate::ascii::ASCII;
+use crate::config::Config;
 
 pub fn run(config: Config) -> Result<HashMap<char, usize>, Box<dyn Error>> {
     let content = fs::read_to_string(config.filename)?;

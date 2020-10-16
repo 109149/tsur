@@ -75,35 +75,7 @@ dependencies = [
 name = "tsur"
 version = "0.1.1"
 dependencies = [
- "tsur-args",
- "tsur-config",
- "tsur-run",
-]
-
-[[package]]
-name = "tsur-args"
-version = "0.1.1"
-dependencies = [
  "clap",
-]
-
-[[package]]
-name = "tsur-ascii"
-version = "0.1.1"
-
-[[package]]
-name = "tsur-config"
-version = "0.1.1"
-dependencies = [
- "clap",
-]
-
-[[package]]
-name = "tsur-run"
-version = "0.1.1"
-dependencies = [
- "tsur-ascii",
- "tsur-config",
 ]
 
 [[package]]
