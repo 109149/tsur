@@ -10,7 +10,7 @@ pub struct Config {
 
 impl Config {
     pub fn new(args: clap::ArgMatches) -> Result<Config, &'static str> {
-        let mut count_ascii_characters = false;
+        let mut count_ascii_characters = true; // default
         let mut sort_by = String::from("vasc");
         if let Some(sub_cmd) = args.subcommand_matches("count") {
             // let sub_args: Vec<_> = sub_arg.args.iter().map(|x| x.0).collect();
