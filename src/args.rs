@@ -1,12 +1,44 @@
 //! # Tsur Args.
 //! For handling terminal arguments.
-use clap::{App, Arg};
+use clap::{App, Arg, SubCommand};
+
+use crate::consts;
 
 pub fn args() -> clap::ArgMatches<'static> {
-    App::new("tsur")
-        .version("0.1.0")
-        .author("109149 <109149qwe@gmail.com>")
-        .about("Just Rusting...You know...O_O")
+    let res = App::new("tsur")
+        .version(consts::VERSION)
+        .author(consts::AUTHOR)
+        .about(consts::ABOUT)
+        .subcommand(
+            SubCommand::with_name("count")
+                .arg(
+                    Arg::with_name("count_chars")
+                        .short("c")
+                        .long("count-chars")
+                        .takes_value(false)
+                        .required(false),
+                )
+                .arg(
+                    Arg::with_name("count_words")
+                        .short("w")
+                        .long("count-words")
+                        .takes_value(false)
+                        .required(false),
+                )
+                .arg(
+                    Arg::with_name("sort_by")
+                        .short("s")
+                        .long("sort-by")
+                        .takes_value(true)
+                        .required(false)
+                        .possible_value("vasc")
+                        .possible_value("vdesc")
+                        .possible_value("kasc")
+                        .possible_value("kdesc")
+                        .default_value("vasc")
+                        .help("Sort by key/value"),
+                ),
+        )
         .arg(
             Arg::with_name("file")
                 .short("f")
@@ -16,22 +48,6 @@ pub fn args() -> clap::ArgMatches<'static> {
                 .value_name("FILE")
                 .help("File to read"),
         )
-        .arg(
-            Arg::with_name("mode")
-                .short("m")
-                .long("mode")
-                .takes_value(true)
-                .required(true)
-                .possible_value("count chars")
-                .possible_value("count words")
-                .help("Select modes"),
-        )
-        .arg(
-            Arg::with_name("bool_flag")
-                .short("bf")
-                .long("bool-flag")
-                .takes_value(false)
-                .help("QWE"),
-        )
-        .get_matches()
+        .get_matches();
+    res
 }

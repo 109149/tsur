@@ -20,5 +20,5 @@ name = "tsur"
 path = "src/lib.rs"
 
 [[test]]
-path = "src/args/test.rs"
-name = "tsur-args-test"
+path = "src/ascii/test.rs"
+name = "tsur-ascii-test"
