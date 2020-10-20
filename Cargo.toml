@@ -1,13 +1,13 @@
 [package]
 name = "tsur"
-version = "0.1.2"
+version = "0.1.3"
 authors = ["109149 <109149qwe@gmail.com>"]
 description = "ASCII character counter."
 edition = "2018"
 license = "MIT OR Apache-2.0"
-repository = "https://github.com/109149/trust"
-homepage = "https://github.com/109149/trust"
-documentation = "https://github.com/109149/trust"
+repository = "https://github.com/109149/tsur"
+homepage = "https://github.com/109149/tsur"
+documentation = "https://github.com/109149/tsur"
 readme = "README.md"
 keywords = ["ascii", "tsur", "count"]
 categories = ["command-line-utilities", "text-processing"]
