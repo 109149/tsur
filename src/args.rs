@@ -16,14 +16,16 @@ pub fn args() -> clap::ArgMatches<'static> {
                         .short("c")
                         .long("count-chars")
                         .takes_value(false)
-                        .required(false),
+                        .required(false)
+                        .help("Count characters"),
                 )
                 .arg(
                     Arg::with_name("count_words")
                         .short("w")
                         .long("count-words")
                         .takes_value(false)
-                        .required(false),
+                        .required(false)
+                        .help("Count words"),
                 )
                 .arg(
                     Arg::with_name("sort_by")

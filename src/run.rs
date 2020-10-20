@@ -7,7 +7,7 @@ use std::fs;
 use std::process;
 
 use crate::ascii::ascii::ASCII;
-use crate::config::Config;
+use crate::config::config::Config;
 
 pub fn run(config: &Config) -> Result<HashMap<char, usize>, Box<dyn Error>> {
     let content = fs::read_to_string(&config.filename)?;

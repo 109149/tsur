@@ -3,7 +3,7 @@
 //! Core caller.
 use std::process;
 
-use tsur::{args, config, run}; // whatever is in lib.rs
+use tsur::{args, config::config, run}; // whatever is in lib.rs
 
 fn main() {
     let config = config::Config::new(args::args()).unwrap_or_else(|err| {
