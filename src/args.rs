@@ -4,6 +4,7 @@ use clap::{App, Arg, SubCommand};
 
 use crate::consts;
 
+// TODO: read dir
 pub fn args() -> clap::ArgMatches<'static> {
     let res = App::new("tsur")
         .version(consts::VERSION)
@@ -47,6 +48,7 @@ pub fn args() -> clap::ArgMatches<'static> {
                 .long("file")
                 .takes_value(true)
                 .required(true)
+                .min_values(1)
                 .value_name("FILE")
                 .help("File to read"),
         )

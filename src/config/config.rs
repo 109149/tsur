@@ -5,7 +5,7 @@
 
 #[derive(Debug)]
 pub struct Config {
-    filename: String,
+    filename: Vec<String>,
     count_ascii_characters: bool,
     sort_by: String,
 }
@@ -26,12 +26,15 @@ impl Config {
             // let sub_args: Vec<_> = sub_arg.args.iter().map(|x| x.0).collect();
 
             count_ascii_characters = sub_cmd.is_present("count_chars");
-            sort_by = sub_cmd.value_of("sort_by").unwrap().to_string();
+            sort_by = match sub_cmd.is_present("sort_by") {
+                true => sub_cmd.value_of("sort_by").unwrap().to_string(),
+                false => sort_by,
+            };
         }
 
-        let filename = match args.value_of("file") {
-            Some(f) => f.to_string(),
-            None => return Err("No filename"),
+        let filename = match args.values_of("file") {
+            Some(f) => f.map(|x| x.into()).collect::<Vec<String>>(),
+            None => return Err("No filename(s)"),
         };
 
         Ok(Config {
@@ -41,7 +44,7 @@ impl Config {
         })
     }
 
-    pub fn get_filename(&self) -> &String {
+    pub fn get_filename(&self) -> &Vec<String> {
         &self.filename
     }
 
