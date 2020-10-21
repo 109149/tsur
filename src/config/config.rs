@@ -1,6 +1,6 @@
 //! # Tsur Config.
 //!
-//! Config structure.
+//! Config structure handles and saves user input arguments.
 // use std::ops::Deref;
 
 #[derive(Debug)]
@@ -19,6 +19,11 @@ pub struct Config {
 // }
 
 impl Config {
+    /// Returns `Config` if everything is fine, else Err.
+    ///
+    /// # Arguments
+    ///
+    /// * `args` - A clap::ArgMatches
     pub fn new(args: clap::ArgMatches) -> Result<Config, &'static str> {
         let mut count_ascii_characters = true; // default
         let mut sort_by = String::from("vasc");
@@ -44,14 +49,22 @@ impl Config {
         })
     }
 
+    /// Returns reference vector of strings of filenames.
     pub fn get_filename(&self) -> &Vec<String> {
         &self.filename
     }
 
+    /// Returns if user wants to count ascii characters by passing `-c` as terminal argument.
     pub fn count_ascii_characters(&self) -> bool {
         self.count_ascii_characters
     }
 
+    /// Returns string reference. User chooses how to sort ascii characters by passing below values
+    /// to `-s` flag:
+    /// - `vasc` - value ascending,
+    /// - `vdesc` - value descending,
+    /// - `kasc` - key ascending,
+    /// - `kdesc` - key descending,
     pub fn get_sort_by(&self) -> &String {
         &self.sort_by
     }

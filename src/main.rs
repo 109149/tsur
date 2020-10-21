@@ -1,16 +1,19 @@
 //! # Tsur Core.
 //!
 //! Core caller.
+// #![crate_name = "tsur"]
 use std::process;
 
 use tsur::{args, config::config, run}; // whatever is in lib.rs
 
 fn main() {
+    // Config
     let config = config::Config::new(args::args()).unwrap_or_else(|err| {
         eprintln!("Could not parse arguments: {}", err);
         process::exit(1);
     });
 
+    // Is this really an efficient way doin this?
     let mut result: Vec<(char, usize)> = vec![];
     let mut res = match run::run(&config) {
         Ok(i) => {
@@ -36,6 +39,11 @@ fn main() {
     print(&res);
 }
 
+/// Print helper.
+///
+/// # Arguments
+///
+/// * `v` - A reference to a vector of (char, usize) tuple
 fn print(v: &Vec<(char, usize)>) {
     println!("{{");
     let _ = v

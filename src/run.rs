@@ -9,6 +9,11 @@ use std::process;
 use crate::ascii::ascii::ASCII;
 use crate::config::config::Config;
 
+/// Returns result of hashmap of character occurrences, or dynamic error.
+///
+/// # Arguments
+///
+/// * `config` - A reference to a `Config` structure.
 pub fn run(config: &Config) -> Result<HashMap<char, usize>, Box<dyn Error>> {
     // let content = fs::read_to_string(&config.get_filename())?;
     let content = config
