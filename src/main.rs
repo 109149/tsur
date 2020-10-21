@@ -26,7 +26,7 @@ fn main() {
         }
     };
 
-    match &config.sort_by[..] {
+    match &config.get_sort_by()[..] {
         "vasc" => res.sort_by(|a, b| a.1.cmp(&b.1)),  // val: asc
         "vdesc" => res.sort_by(|a, b| b.1.cmp(&a.1)), // val: desc
         "kasc" => res.sort_by(|a, b| a.0.cmp(&b.0)),  // key: asc

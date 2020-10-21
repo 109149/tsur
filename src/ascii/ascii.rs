@@ -2,11 +2,20 @@
 //!
 //! ASCII structure.
 use std::collections::HashMap;
+// use std::ops::Deref;
 
 #[derive(Debug, PartialEq, Eq)]
 pub struct ASCII {
     ascii: HashMap<char, usize>,
 }
+
+// impl Deref for ASCII {
+//     type Target = HashMap<char, usize>;
+
+//     fn deref(&self) -> &Self::Target {
+//         &self.ascii
+//     }
+// }
 
 #[allow(dead_code)]
 impl ASCII {

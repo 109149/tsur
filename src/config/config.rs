@@ -1,12 +1,22 @@
 //! # Tsur Config.
 //!
 //! Config structure.
+// use std::ops::Deref;
+
 #[derive(Debug)]
 pub struct Config {
-    pub filename: String,
-    pub count_ascii_characters: bool,
-    pub sort_by: String,
+    filename: String,
+    count_ascii_characters: bool,
+    sort_by: String,
 }
+
+// impl Deref for Config {
+//     type Target = String;
+
+//     fn deref(&self) -> &Self::Target {
+//         &self.filename
+//     }
+// }
 
 impl Config {
     pub fn new(args: clap::ArgMatches) -> Result<Config, &'static str> {
@@ -29,5 +39,17 @@ impl Config {
             count_ascii_characters,
             sort_by,
         })
+    }
+
+    pub fn get_filename(&self) -> &String {
+        &self.filename
+    }
+
+    pub fn count_ascii_characters(&self) -> bool {
+        self.count_ascii_characters
+    }
+
+    pub fn get_sort_by(&self) -> &String {
+        &self.sort_by
     }
 }
