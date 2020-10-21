@@ -4,6 +4,7 @@
 // #![crate_name = "tsur"]
 use std::process;
 
+use tsur::consts;
 use tsur::{args, config::config, run}; // whatever is in lib.rs
 
 fn main() {
@@ -30,10 +31,10 @@ fn main() {
     };
 
     match &config.get_sort_by()[..] {
-        "vasc" => res.sort_by(|a, b| a.1.cmp(&b.1)),  // val: asc
-        "vdesc" => res.sort_by(|a, b| b.1.cmp(&a.1)), // val: desc
-        "kasc" => res.sort_by(|a, b| a.0.cmp(&b.0)),  // key: asc
-        "kdesc" => res.sort_by(|a, b| b.0.cmp(&a.0)), // key: desc
+        consts::VA => res.sort_by(|a, b| a.1.cmp(&b.1)), // val: asc
+        consts::VD => res.sort_by(|a, b| b.1.cmp(&a.1)), // val: desc
+        consts::KA => res.sort_by(|a, b| a.0.cmp(&b.0)), // key: asc
+        consts::KD => res.sort_by(|a, b| b.0.cmp(&a.0)), // key: desc
         _ => (),
     };
     print(&res);
