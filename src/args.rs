@@ -7,7 +7,7 @@ use crate::consts;
 // TODO: read dir
 pub fn args() -> clap::ArgMatches<'static> {
     let res = App::new("tsur")
-        .version(consts::VERSION)
+        .version(consts::VERSION.unwrap_or("Uknown"))
         .author(consts::AUTHOR)
         .about(consts::ABOUT)
         .subcommand(
