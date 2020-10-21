@@ -49,8 +49,8 @@ pub fn args() -> clap::ArgMatches<'static> {
                 .takes_value(true)
                 .required(true)
                 .min_values(1)
-                .value_name("FILE")
-                .help("File to read"),
+                .value_name("FILE(S)")
+                .help("File(s) to read"),
         )
         .get_matches();
     res
