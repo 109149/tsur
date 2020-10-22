@@ -4,6 +4,8 @@ Tsur is a character counter tool.
 
 [![Current Version](http://meritbadge.herokuapp.com/tsur)](https://crates.io/crates/tsur) [![Documentation](https://docs.rs/tsur/badge.svg)][docs]
 
+[docs]: https://docs.rs/tsur/
+
 ## Examples
 
 ```bash
