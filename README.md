@@ -2,7 +2,9 @@ Tsur (tsur)
 ------------
 Tsur is a character counter tool.
 
-### Examples
+[![Current Version](http://meritbadge.herokuapp.com/tsur)](https://crates.io/crates/tsur) [![Documentation](https://docs.rs/tsur/badge.svg)][docs]
+
+## Examples
 
 ```bash
 # count all ascii characters in text.txt
@@ -25,3 +27,6 @@ tsur -f text.txt count -c -s vasc
 # and output in ascending order, by values
 tsur -f t1.txt t2.txt count -c
 ```
+
+## Author
+[109149](https://github.com/109149)

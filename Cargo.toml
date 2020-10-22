@@ -5,9 +5,11 @@ authors = ["109149 <109149qwe@gmail.com>"]
 description = "Count ASCII characters in file(s)."
 edition = "2018"
 license = "MIT OR Apache-2.0"
+
 repository = "https://github.com/109149/tsur"
 homepage = "https://github.com/109149/tsur"
 documentation = "https://docs.rs/tsur/*/tsur/"
+
 readme = "README.md"
 keywords = ["ascii", "tsur", "count"]
 categories = ["command-line-utilities", "text-processing"]
